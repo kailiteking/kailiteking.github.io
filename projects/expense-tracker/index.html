@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Expense Tracker</title>
+</head>
+<body>
+<h1 class="title">Expense Tracker</h1>
+<div class="container">
+    <h4>your Balance</h4>
+    <h1 class="balance money">10</h1>
+    <div class="in-exp-container">
+        <div class="income">
+            <h4>Income</h4>
+            <p id="income" class="money plus">11</p>
+        </div>
+        <div class="expenses">
+            <h4>Income</h4>
+            <p id="expenses" class="money lose">11</p>
+        </div>
+    </div>
+    <h3>History</h3>
+    <ul id="history" class="list">
+        <li class="lose">
+            hhh
+            <span>+3</span>
+            <button class="delete-btn">X</button>
+        </li>
+        <li class="lose">
+            hhh
+            <span>+3</span>
+            <button class="delete-btn">X</button>
+        </li>
+        <li class="lose">
+            hhh
+            <span>+3</span>
+            <button class="delete-btn">X</button>
+        </li>
+        <li class="lose">
+            hhh
+            <span>+3</span>
+            <button class="delete-btn">X</button>
+        </li>
+        <li class="lose">
+            hhh
+            <span>+3</span>
+            <button class="delete-btn">X</button>
+        </li>
+        <li class="lose">
+            hhh
+            <span>+3</span>
+            <button class="delete-btn">X</button>
+        </li>
+        <li class="lose">
+            hhh
+            <span>+3</span>
+            <button class="delete-btn">X</button>
+        </li>
+    </ul>
+    <h3>Add new Transaction</h3>
+    <form id="add-form">
+        <div class="form-control">
+            <label for="note">Note</label>
+            <input id="note" type="text" placeholder="Enter Note">
+        </div>
+        <div class="form-control">
+            <label for="amount">Note</label>
+            <input id="amount" type="number" placeholder="Enter Note">
+        </div>
+        <button class="btn">Add Transaction</button>
+    </form>
+</div>
+<div class="toast">
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+/*nav 部分 */
+
+.nav {
+    color: white;
+    padding: 10px 0;
+    background-color: var(--bg_color);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav .container{
+    display: flex;
+    background-color: var(--bg_color);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav .logo>img {
+    height: 60px;
+}
+
+.nav .container>ul {
+    width: 260px;
+    display: flex;
+    align-items: center;
+
+}
+
+.nav .container li {
+    margin: 5px 15px;
+    font-size: 17px;
+}
+
+/*header 部分*/
+
+.welcome {
+    height: 600px;
+    position: relative;
+    z-index: 2;
+    background: var(--bg_color) url(../img/showcase-bg.png) no-repeat center bottom;
+}
+
+.welcome .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.welcome h2 {
+    font-size: 40px;
+    letter-spacing: 3px;
+    line-height: 1.7;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.welcome::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4,14,39,0.8);
+    z-index: -2;
+}
+
+/*project部分*/
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 2px;
+    background-color: var(--bg_color);
+}
+
+.projects>div {
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+    background-color: #ccc;
+}
+
+.projects img {
+    width: 100%;
+    height: 100%;
+}
+
+.cover {
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--main-color);
+    color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: opacity 0.3s ease-in;
+}
+
+.cover:hover {
+    opacity: 1;
+}
+
+.cover h4 {
+    font-size: 20px;
+}
+.cover p {
+    margin: 15px 5px;
+}
+
+.btn {
+    display: block;
+    width: 120px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    background-color: var(--bg_color);
+    transition: all .2s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(.96);
+}

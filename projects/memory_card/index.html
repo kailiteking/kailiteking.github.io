@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Memory Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button id="clear" class="clear btn">Clear</button>
+<div class="main-title">
+    <h1>Memory Card</h1>
+    <button id="show" class="btn btn-small">Add New Card</button>
+</div>
+<div id="cards" class="cards-container">
+
+</div>
+<div class="navigation">
+    <button id="prev" class="nav-btn">&lt;</button>
+    <p id="current"></p>
+    <button id="next" class="nav-btn">&gt;</button>
+</div>
+<div id="add" class="add-container">
+    <div class="add-title">
+        <h1>Add New Card</h1>
+        <button id="hide" class="hide btn btn-small">X</button>
+    </div>
+    <div class="question-form">
+        <label for="question">Question</label>
+        <textarea id="question" placeholder="Enter question here..."></textarea>
+    </div>
+    <div class="question-form">
+        <label for="answer">Question</label>
+        <textarea id="answer" placeholder="Enter answer here..."></textarea>
+    </div>
+    <button id="add-btn" class="btn">Add Card</button>
+</div>
+<script src="script.js"></script>
+<script>
+</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b152e;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.movie-container {
+    margin: 20px 0;
+}
+
+.movie-container select {
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 5px 15px;
+    outline: none;
+    appearance: none;
+}
+
+.showcase {
+    display: flex;
+    margin: 15px 0;
+    padding: 5px 10px;
+    list-style: none;
+    background-color: rgba(0, 0, 0, .3);
+    color: #717171;
+    justify-content: space-between;
+}
+
+.showcase li {
+    display: flex;
+    margin: 0 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.showcase small {
+    margin-left: 8px;
+}
+
+.seat {
+    width: 16px;
+    height: 18px;
+    margin: 4px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    background-color: #32323d;
+}
+
+.container {
+    perspective: 1000px;
+    margin-bottom: 30px;
+}
+
+.screen {
+    width: 100%;
+    height: 80px;
+    margin: 15px 0;
+    background-color: #fff;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgb(255 255 255 / 70%);
+}
+
+.row {
+    display: flex;
+}
+
+.money {
+    margin: 4px 0;
+}
+
+.money .count {
+    color: #fff29b;
+}
+.money .total {
+    color: #fff29b;
+}
+
+.row .seat:nth-of-type(2) {
+    margin-right: 24px;
+}
+
+.row .seat:nth-last-of-type(2) {
+    margin-left: 24px;
+}
+
+.seat.selected {
+    background-color: #fff368;
+}
+
+.seat.occupied {
+    background-color: #b2c4c2;
+}
+
+.seat:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.showcase .seat:hover {
+    cursor: default;
+    transform: scale(1);
+}

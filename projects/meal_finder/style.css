@@ -1,0 +1,254 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-size: 16px;
+    font-family: "Times New Roman", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #edac65;
+}
+button,
+input {
+    font-size: 1rem;
+    padding: .6rem;
+    border: none;
+    outline-color:lavender;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    max-width: 68.75rem;
+    margin: 0 auto;
+}
+
+.container .title {
+    width: 100%;
+    font-size: 3.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 1.25rem 0;
+}
+
+
+.search-container {
+    /*background-color: #ddd;*/
+    display: flex;
+    padding: 1.25rem 2.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container .search-form {
+    display: flex;
+}
+
+.search-container .search-form input {
+    width: 25rem;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.search-container .search-form button {
+    font-size: 1rem;
+    padding: .6rem;
+    border: none;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    outline: none;
+}
+
+.search-container .random {
+    margin-left: 1.25rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.25rem;
+}
+
+.result-container .result-header {
+    font-size: 2rem;
+}
+
+
+.meal-detail {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    padding: 0.625rem;
+    display: grid;
+    opacity: 0;
+    grid-gap: 0.625rem;
+    grid-template-columns: 18.75rem 7fr;
+    grid-template-rows: 1fr 18.75rem 1fr;
+    grid-template-areas:
+        "name practice"
+        "pic practice"
+        "info ingredintes";
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-50%);
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    transition: .4s;
+    z-index: -1;
+}
+
+.meal-detail.show-detail {
+    width: 68.75rem;
+    position: fixed;
+    z-index: 2;
+    opacity: 1;
+    top: 5%;
+}
+
+.meal-detail .meal-name {
+    font-size: 2.2rem;
+    padding: 1.25rem;
+    text-align: center;
+    grid-area: name;
+}
+
+.meal-detail img {
+    width: 80%;
+    height: 80%;
+    grid-area: pic;
+    justify-self: center;
+    align-self: center;
+    border-radius: 8px;
+}
+
+.meal-detail .meal-info {
+    grid-area: info;
+    padding: 1.25rem;
+}
+
+.meal-detail .meal-info p{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+.meal-detail .meal-practice {
+    grid-area: practice;
+    max-height: 30rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    word-spacing: 0.1rem;
+    overflow: auto;
+}
+
+.meal-detail .meal-practice::-webkit-scrollbar {
+    display: none;
+}
+
+.meal-detail .meal-practice:first-letter {
+    font-size: 3.2rem;
+    float: left;
+    margin: 1rem 0.5rem 0 0;
+}
+
+.meal-detail .meal-ingredients {
+    grid-area: ingredintes;
+    padding: 1.25rem;
+}
+
+.meal-ingredients li {
+    display: inline-block;
+    background-color: #fff;
+    padding: 0.375rem;
+    margin: 0 0.375rem .375rem 0;
+    border-radius: 0.25rem;
+}
+
+.meals {
+    display: grid;
+    justify-items: stretch;
+    align-items: center;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 2rem;
+}
+
+.meals .meal{
+    width: 15.5rem;
+    height: 15.5rem;
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.meal img {
+    width: 100%;
+    height: 100%;
+}
+
+.meal p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 15.5rem;
+    font-size: 1.4rem;
+    background-color: rgba(255, 255, 255, .6);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    opacity: 0;
+    transition: opacity .2s;
+}
+
+.meal:hover > p {
+    opacity: 1;
+}
+
+@media (max-width: 50rem) {
+    .meals {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 43.75rem) {
+    .meals {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 31.25rem) {
+    .meals {
+        grid-template-columns: 1fr;
+    }
+
+    .meal {
+        width: 18.75rem;
+        height: 18.75rem;
+    }
+
+    .search-container .search-form input {
+        width: 100%;
+    }
+}
